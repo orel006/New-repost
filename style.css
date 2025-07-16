@@ -1,0 +1,133 @@
+/* === การตั้งค่าตัวแปรและค่าเริ่มต้น === */
+:root {
+    --primary-color: #2c3e50; /* สีน้ำเงินเข้ม */
+    --secondary-color: #34495e; /* สีน้ำเงินเทา */
+    --accent-color: #e67e22; /* สีส้ม (สำหรับปุ่มและจุดเน้น) */
+    --light-gray-color: #f4f4f4;
+    --text-color: #333;
+    --white-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* ทำให้การเลื่อนหน้าจอสมูท */
+}
+
+body {
+    font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ที่อ่านง่าย (ถ้าไม่มีในเครื่องจะใช้ sans-serif แทน) */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+/* === การออกแบบส่วนต่างๆ === */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+header h1 {
+    color: var(--white-color);
+    margin-bottom: 0.5rem;
+}
+
+header strong {
+    color: var(--accent-color);
+}
+
+nav {
+    background: var(--secondary-color);
+    padding: 1rem;
+    text-align: center;
+    position: sticky; /* ทำให้เมนูเกาะอยู่ด้านบนเมื่อเลื่อนจอ */
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--accent-color);
+    border-radius: 5px;
+}
+
+section {
+    padding: 4rem 2rem; /* เพิ่มระยะห่างให้ดูโปร่ง */
+    max-width: 1000px;
+    margin: auto; /* จัดให้อยู่กึ่งกลาง */
+    border-bottom: 1px solid #eee;
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--light-gray-color); /* สลับสีพื้นหลังให้ดูง่าย */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+article {
+    margin-top: 1.5rem;
+    background: var(--white-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+    background-color: var(--light-gray-color);
+    padding: 2rem;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* === การออกแบบสำหรับมือถือ (Responsive) === */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    nav {
+        padding: 0.5rem;
+    }
+    
+    nav a {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 2.5rem 1rem;
+    }
+}
